@@ -1,0 +1,66 @@
+
+<h1>Update Students Mark</h1>   
+<form>  
+    <div class="container" [formGroup]="updateForm"  >  
+
+        <label>Username : </label>   
+        <input type="text" placeholder="Enter Username" name="username" formControlName="username" required>
+
+        
+        <div
+          *ngIf="(this.updateForm.get('username')?.touched||this.updateForm.get('username')?.dirty)&&(this.updateForm.get('username')?.errors)"
+          style="color: red; text-align: center;">Invalid User Name</div>
+
+        <label>Branch : </label>   
+        <input type="text" placeholder="Enter Branch" name="branch" formControlName="branch" required>
+        
+        <div
+          *ngIf="(this.updateForm.get('branch')?.touched||this.updateForm.get('branch')?.dirty)&&(this.updateForm.get('branch')?.errors)"
+          style="color: red; text-align: center;">Invalid Branch Name</div>
+
+
+        <label>Register Number : </label>   
+        <input type="number" placeholder="Enter Register Number" name="regno" formControlName="regno" required>
+
+        <div
+          *ngIf="(this.updateForm.get('regno')?.touched||this.updateForm.get('regno')?.dirty)&&(this.updateForm.get('regno')?.errors)"
+          style="color: red; text-align: center;">Invalid Register Number</div>
+
+        <label>English  : </label>   
+        <input type="number" placeholder="Enter The Mark Obtained" name="english" formControlName="english" required>
+
+        <div
+        *ngIf="(this.updateForm.get('english')?.touched||this.updateForm.get('english')?.dirty)&&(this.updateForm.get('english')?.errors)"
+        style="color: red; text-align: center;">Invalid Mark</div>
+
+        <label>Physics : </label>   
+        <input type="number" placeholder="Enter The Mark Obtained" name="physics" formControlName="physics" required>
+
+        <div
+        *ngIf="(this.updateForm.get('physics')?.touched||this.updateForm.get('physics')?.dirty)&&(this.updateForm.get('physics')?.errors)"
+        style="color: red; text-align: center;">Invalid Mark</div>
+
+        <label>Chemistry : </label>   
+        <input type="number" placeholder="Enter The Mark Obtained" name="chemistry" formControlName="chemistry" required>
+
+        <div
+        *ngIf="(this.updateForm.get('chemistry')?.touched||this.updateForm.get('chemistry')?.dirty)&&(this.updateForm.get('chemistry')?.errors)"
+        style="color: red; text-align: center;">Invalid Mark</div>
+
+
+        <label>Total mark : </label>   
+        <input type="number" placeholder="Enter Total Mark " name="total" formControlName="total" required>
+
+        <div
+        *ngIf="(this.updateForm.get('total')?.touched||this.updateForm.get('total')?.dirty)&&(this.updateForm.get('total')?.errors)"
+        style="color: red; text-align: center;">Invalid Mark</div>
+
+        <div style="color: red;">{{error}}</div>
+
+
+        <div style="text-align: center;">
+            <button type="submit" (click)="update()" >Update</button>
+        </div>   
+    </div>   
+</form>     
+ 

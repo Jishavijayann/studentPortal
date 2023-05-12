@@ -1,0 +1,27 @@
+   
+     <h1> Student Login Form </h1>  
+    <form [formGroup]="loginForm"  (ngSubmit)="login()">  
+        <div class="container">   
+            <label>Username : </label>   
+            <input type="text" placeholder="Enter Username" name="username" formControlName="username" required> 
+            
+            <div
+          *ngIf="(this.loginForm.get('username')?.touched||this.loginForm.get('username')?.dirty)&&(this.loginForm.get('username')?.errors)"
+          style="color: red; text-align: center;">Invalid User Name</div>
+
+            <label>Register Number : </label>   
+            <input type="number" placeholder="Enter Register Number" name="regno" formControlName="regno" required>  
+            <div style="text-align: center;">
+
+                <div
+                *ngIf="(this.loginForm.get('regno')?.touched||this.loginForm.get('regno')?.dirty)&&(this.loginForm.get('regno')?.errors)"
+                style="color: red; text-align: center;">Invalid Register Number</div>
+
+                <div style="color: red;">{{error}}</div>
+
+                <button type="submit" >Login</button>
+            </div >
+            <div style="text-align: center;">Dont have an account?<a routerLink="register"> Register</a></div>   
+        </div>   
+    </form>     
+     

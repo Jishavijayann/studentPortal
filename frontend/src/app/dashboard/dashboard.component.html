@@ -1,0 +1,44 @@
+<header>
+    <div>
+        <h1>Students Portal</h1>
+    </div>
+        <div>
+            <ul>
+                <li><a routerLink="/update">Update Students Mark</a></li>
+                <li style="float:right"><a class="active" (click)="logout()" >Logout</a></li>
+              </ul>
+        </div>    
+</header>
+
+
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>No.</th>
+            <th>Student Name</th>
+            <th>Branch</th>
+            <th>Register Number</th>
+            <th>English</th>
+            <th>Physics</th>
+            <th>Chemistry</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr  *ngFor="let student of students; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{student.student_name}}</td>
+            <td>{{student.branch}}</td>
+            <td>{{student.register_number}}</td>
+            <td>{{student.english}}</td>
+            <td>{{student.physics}}</td>
+            <td>{{student.chemistry}}</td>
+            <td>{{student.total_mark}}</td>
+            <td><button >Update</button></td>
+        </tr>
+        <tbody>
+    </table>
+</div>

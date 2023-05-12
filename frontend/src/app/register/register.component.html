@@ -1,0 +1,66 @@
+<h1> Student Register Form </h1>   
+<form [formGroup]="registerForm" >  
+    <div class="container" >  
+
+        <label>Username : </label>   
+        <input type="text" placeholder="Enter Username" name="username" formControlName="username" required>
+
+        
+        <div
+          *ngIf="(this.registerForm.get('username')?.touched||this.registerForm.get('username')?.dirty)&&(this.registerForm.get('username')?.errors)"
+          style="color: red; text-align: center;">Invalid User Name</div>
+
+        <label>Branch : </label>   
+        <input type="text" placeholder="Enter Branch" name="branch" formControlName="branch" required>
+        
+        <div
+          *ngIf="(this.registerForm.get('branch')?.touched||this.registerForm.get('branch')?.dirty)&&(this.registerForm.get('branch')?.errors)"
+          style="color: red; text-align: center;">Invalid Branch Name</div>
+
+
+        <label>Register Number : </label>   
+        <input type="number" placeholder="Enter Register Number" name="regno" formControlName="regno" required>
+
+        <div
+          *ngIf="(this.registerForm.get('regno')?.touched||this.registerForm.get('regno')?.dirty)&&(this.registerForm.get('regno')?.errors)"
+          style="color: red; text-align: center;">Invalid Register Number</div>
+
+        <label>English  : </label>   
+        <input type="number" placeholder="Enter The Mark Obtained" name="english" formControlName="english" required>
+
+        <div
+        *ngIf="(this.registerForm.get('english')?.touched||this.registerForm.get('english')?.dirty)&&(this.registerForm.get('english')?.errors)"
+        style="color: red; text-align: center;">Invalid Mark</div>
+
+        <label>Physics : </label>   
+        <input type="number" placeholder="Enter The Mark Obtained" name="physics" formControlName="physics" required>
+
+        <div
+        *ngIf="(this.registerForm.get('physics')?.touched||this.registerForm.get('physics')?.dirty)&&(this.registerForm.get('physics')?.errors)"
+        style="color: red; text-align: center;">Invalid Mark</div>
+
+        <label>Chemistry : </label>   
+        <input type="number" placeholder="Enter The Mark Obtained" name="chemistry" formControlName="chemistry" required>
+
+        <div
+        *ngIf="(this.registerForm.get('chemistry')?.touched||this.registerForm.get('chemistry')?.dirty)&&(this.registerForm.get('chemistry')?.errors)"
+        style="color: red; text-align: center;">Invalid Mark</div>
+
+
+        <label>Total mark : </label>   
+        <input type="number" placeholder="Enter Total Mark " name="total" formControlName="total" required>
+
+        <div
+        *ngIf="(this.registerForm.get('total')?.touched||this.registerForm.get('total')?.dirty)&&(this.registerForm.get('total')?.errors)"
+        style="color: red; text-align: center;">Invalid Mark</div>
+
+        <div style="color: red;">{{error}}</div>
+
+
+        <div style="text-align: center;">
+            <button type="submit"  (click)="register()">Register</button>
+        </div >
+        <div style="text-align: center;">Already registered?<a routerLink="">login</a></div>   
+    </div>   
+</form>     
+ 
